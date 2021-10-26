@@ -68,6 +68,8 @@ public class Story {
 		System.out.println(question);
 		String sentence = input.nextLine();
 		String newSentence = "";
+		
+		//adds every other letter to the new string
 		for(int i = 0; i < sentence.length(); i+=2)
 			newSentence += sentence.substring(i,i+1);
 		return newSentence;
@@ -79,6 +81,8 @@ public class Story {
 		System.out.println(question);
 		String sentence = input.nextLine();
 		String newSentence = "";
+		
+		//adds every other letter to the new string
 		for(int i = start; i < sentence.length(); i+=2)
 			newSentence += sentence.substring(i,i+1);
 		return newSentence;
@@ -91,6 +95,8 @@ public class Story {
 		String sentence = input.nextLine();
 		String newString = "";
 		int length = sentence.length();
+		
+		//for every letter in the string, it places it in a new one, starting from the end
 		for (int i = length-1; i > 0; i--)
 			newString += sentence.substring(i,i+1);
 		return newString;
@@ -127,5 +133,42 @@ public class Story {
 	 * finds the vowels n a string, returns the string starting from the last time a vowel 
 	 * occurs for the first time.
 	*/
-	
+	public static String fromVowel(Scanner input, String question)
+	{
+		System.out.println(question);
+		String sentence = input.nextLine();
+		
+		//gets the index of each vowel
+		int a = sentence.indexOf("a");
+		int e = sentence.indexOf("e");
+		int i = sentence.indexOf("i");
+		int o = sentence.indexOf("o");
+		int u = sentence.indexOf("u");
+		int last = 0;
+		
+		//for loops determining the smallest index
+		for (int b = a; b < e; b+=a)
+			last += a;
+		for (int b = e; b < a; b+=e)
+			last += e;
+		for (int b = last; b < i; b+=last)
+		{
+			last -= last;
+			last += i;
+		}
+		for (int b = last; b < o; b+=last)
+		{
+			last -= last;
+			last += o;
+		}
+		for (int b = last; b < u; b+=last)
+		{
+			last -= last;
+			last += u;
+		}
+		
+		//makes a new sentence starting at that index
+		String newSentence = sentence.substring(last);
+		return newSentence;
+	}
 }
