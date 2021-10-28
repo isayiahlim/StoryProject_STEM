@@ -14,12 +14,61 @@ public class Story {
 	public static void main(String[] args) 
 	{
 		Scanner input = new Scanner(System.in);
-		String name = nameGame(input);
-		String fixedRightRotate = rotateRight(input, "Write a sentence, then press enter.");
+				
+		//sets variables equal to each of the inputs in the methods
+		String nameG = nameGame(input);
+		String name = firstName(input);
+		String fixedRight = rotateRight(input, "Write a verb.");
+		String numRight = rotateRight(input, "Write an adjective.", 3);
+		String fixedLeft = rotateLeft(input, "Write a name.");
+		String numLeft = rotateLeft(input, "Name a Monster.", 3);
+		String fixedEveryOther = skipLetters(input, "Write an adjective.");
+		String numEveryOther = skipLetters(input, "Write another name.", 3);
+		String reverseWord = reverse(input, "Write a silly word.");
+		String repeatEnd = wordMix(input);
+		String vowel = fromVowel(input, "Name an emotion.");
 		
-		drawTree('+', 3, 5);
+		//writes the four paragraphs based off the variables
+		first(fixedEveryOther, name, reverseWord, fixedLeft, numRight, nameG);
+		drawTree('*', 6, 4);
+		second(, , , );
+		drawTree('+', 5, 7);
+		third(, , , );
+		drawTree('-', 8, 3);
+		fourth(, , , );
+		drawTree('=', 3, 5);
 	}
+	
+	//first paragraph
+	public static void first(String a, String b, String c, String d, String e, String f)
+	{
+		System.out.print("On a " + a + " Friday afternoon, " + b + " went to ");
+		System.out.println(c + " Woods with their friend " + d + ".");
+		System.out.print("The woods were especially " + a + " that day, but the two of them were ");
+		System.out.println("too " + e + " to be worried.");
+		System.out.print("Instead, they went and played " + c + ", a game they had made ");
+		System.out.println("when they were younger.");
+		System.out.println("They went and jumped around in a circle, chanting \"" + f + ".\"");		
+	}
+	
+	//second paragraph
+	public static void second(String a, String b, String c, String d)
+	{
 		
+	}
+	
+	//third paragraph
+	public static void third(String a, String b, String c, String d)
+	{
+		
+	}
+	
+	//fourth paragraph
+	public static void fourth(String a, String b, String c, String d)
+	{
+		
+	}
+	
 	//draws the tree based off of the symbol, segment, and height that the user chooses
 	public static void drawTree(char symbol, int segment, int height)
 	{
@@ -76,10 +125,19 @@ public class Story {
 		return game;
 	}
 	
+	//gets the first name of the player
+	public static String firstName(Scanner input)
+	{
+		System.out.println("Please repeat your first name: ");
+		String name = input.next();
+		return name;
+	}
+	
 	//rotates the letters right by two
 	public static String rotateRight(Scanner input, String question)
 	{
 		System.out.println(question);
+		input.nextLine();
 		String sentence = input.nextLine();
 		int length = sentence.length();
 		String newSentence = sentence.substring(length-2) + sentence.substring(0,length-2);
@@ -188,6 +246,7 @@ public class Story {
 	public static String fromVowel(Scanner input, String question)
 	{
 		System.out.println(question);
+		input.nextLine();
 		String sentence = input.nextLine();
 		//gets the index of each vowel
 		int a = sentence.indexOf("a");
