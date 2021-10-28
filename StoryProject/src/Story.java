@@ -13,7 +13,53 @@ import java.util.Scanner;
 public class Story {
 	public static void main(String[] args) 
 	{
-		
+		drawTree('+', 3, 5);
+	}
+	
+	//draws the tree based off of the symbol, segment, and height that the user chooses
+	public static void drawTree(char symbol, int segment, int height)
+	{
+		//variable that adds more spaces to the top and decreases by one each new segment
+		int spaces = segment-1;
+		//variable that starts at zero and adds one more symbol for each new segment
+		int symbolNum = 0;
+		//repeats the triangles in the tree segment number of times
+		for(int s = 0; s < segment; s++)
+		{
+			//makes the triangle based off height
+			for(int h = 0; h < height; h++)
+			{
+				//prints the spaces before the shape
+				for(int i = 0; i < height + spaces - h - 1; i++)
+					System.out.print(" ");
+				//prints the shape
+				for(int j = 0; j < 2 * h + 1 + 2 * symbolNum; j++)
+					System.out.print(symbol);
+				System.out.println();
+			}
+			symbolNum++;
+			spaces--;
+		}
+		//prints the tree trunk
+		for(int k = 0; k < 2; k++)	
+		{
+			//spaces first
+			for(int l = 0; l < (height - 2) + segment; l++)
+				System.out.print(" ");
+			//then trunk
+			System.out.println(symbol);
+		}
+		//prints the base
+		for(int l = 0; l < 2; l++)
+		{
+			//spaces
+			for(int m = 0; m < (height - 4) + segment; m++)
+				System.out.print(" ");
+			//base part
+			for(int n = 0; n < 5; n++)	
+				System.out.print(symbol);
+			System.out.println();
+		}
 	}
 	
 	//asks for first name
