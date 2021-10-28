@@ -13,9 +13,13 @@ import java.util.Scanner;
 public class Story {
 	public static void main(String[] args) 
 	{
+		Scanner input = new Scanner(System.in);
+		String name = nameGame(input);
+		String fixedRightRotate = rotateRight(input, "Write a sentence, then press enter.");
+		
 		drawTree('+', 3, 5);
 	}
-	
+		
 	//draws the tree based off of the symbol, segment, and height that the user chooses
 	public static void drawTree(char symbol, int segment, int height)
 	{
@@ -62,12 +66,14 @@ public class Story {
 		}
 	}
 	
-	//asks for first name
+	//asks for first name and returns the name game
 	public static String nameGame(Scanner input)
 	{
 		System.out.println("What is your first name: ");
 		String name = input.next();
-		return name;
+		String b= name.substring(1);
+		String game = name + ", bo-B" + b + ", banana-fana fo-F" + b + ", fee-fi-mo-m" + b;
+		return game;
 	}
 	
 	//rotates the letters right by two
@@ -183,38 +189,19 @@ public class Story {
 	{
 		System.out.println(question);
 		String sentence = input.nextLine();
-		
 		//gets the index of each vowel
 		int a = sentence.indexOf("a");
 		int e = sentence.indexOf("e");
 		int i = sentence.indexOf("i");
 		int o = sentence.indexOf("o");
 		int u = sentence.indexOf("u");
-		int last = 0;
-		
-		//for loops determining the smallest index
-		for (int b = a; b < e; b+=a)
-			last += a;
-		for (int b = e; b < a; b+=e)
-			last += e;
-		for (int b = last; b < i; b+=last)
-		{
-			last -= last;
-			last += i;
-		}
-		for (int b = last; b < o; b+=last)
-		{
-			last -= last;
-			last += o;
-		}
-		for (int b = last; b < u; b+=last)
-		{
-			last -= last;
-			last += u;
-		}
-		
+		//gets the highest first occurrence 
+		int aOrE = Math.max(a,e);
+		int orI = Math.max(aOrE, i);
+		int orO = Math.max(orI, o);
+		int orU = Math.max(orO, u);
 		//makes a new sentence starting at that index
-		String newSentence = sentence.substring(last);
+		String newSentence = sentence.substring(orU);
 		return newSentence;
 	}
 }
