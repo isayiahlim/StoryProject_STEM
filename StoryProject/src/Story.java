@@ -28,18 +28,26 @@ public class Story {
 		String repeatEnd = wordMix(input);
 		String vowel = fromVowel(input, "Name an emotion.");
 		
-		//writes the four paragraphs based off the variables
+		/* writes the four paragraphs based off the variables 
+		 * (they align with the same letter in each method to avoid confusion later on):
+		 * fixedEveryOther = a, name = b, reverseWord = c, fixedLeft = d, numRight = e, nameG = f
+		 * repeatEnd = g, numLeft = h, fixedRight = i, numEveryOther = j, vowel = k
+        */
+		//first(a,b,c,d,e,f)
 		first(fixedEveryOther, name, reverseWord, fixedLeft, numRight, nameG);
-		drawTree('*', 6, 4);
-		second(, , , );
-		drawTree('+', 5, 7);
-		third(, , , );
-		drawTree('-', 8, 3);
-		fourth(, , , );
-		drawTree('=', 3, 5);
+		drawTree('*', 3, 4);
+		//second(b,d,g,h)
+		second(name, fixedLeft, repeatEnd, numLeft);
+		drawTree('+', 5, 6);
+		//third(b,d,g,i)
+		third(name, fixedLeft, repeatEnd, fixedRight);
+		drawTree('-', 9, 8);
+		//fourth(b,d,g,j,k)
+		fourth(name, fixedLeft, repeatEnd, numEveryOther, vowel);
+		drawTree('=', 4, 3);
 	}
 	
-	//first paragraph
+	//first paragraph- fixedEveryOther, name, reverseWord, fixedLeft, numRight, nameG
 	public static void first(String a, String b, String c, String d, String e, String f)
 	{
 		System.out.print("On a " + a + " Friday afternoon, " + b + " went to ");
@@ -51,22 +59,37 @@ public class Story {
 		System.out.println("They went and jumped around in a circle, chanting \"" + f + ".\"");		
 	}
 	
-	//second paragraph
-	public static void second(String a, String b, String c, String d)
+	//second paragraph- name, fixedLeft, repeatEnd, numLeft
+	public static void second(String b, String d, String g, String h)
 	{
-		
+		System.out.println("A while later, " + b + " and " + d + " started to set up their tent.");
+		System.out.print("Everything was going well, before " + d + " saw a big looming " + h);
+		System.out.println(" in the distance.");
+		System.out.println("\"" + b.toUpperCase() + "!!!\" they yelled, turning to run.");
+		System.out.println(b + " turned around and gasped." + "\"" + h + ",\" they blurted out.");
 	}
 	
-	//third paragraph
-	public static void third(String a, String b, String c, String d)
+	//third paragraph- name, fixedLeft, repeatEnd, fixedRight
+	public static void third(String b, String d, String g, String i)
 	{
-		
+		System.out.print("Scrambling frantically, the two of them stumbled towards their car, ");
+		System.out.println("tripping over roots.");
+		System.out.println("But " + b + " slipped, going down in a " + i + ".");
+		System.out.println("Unrelenting, " + g + " pounded through the brush towards them.");
+		System.out.println("Foam flew from its mouth, and " + d + " screamed.");		
 	}
 	
-	//fourth paragraph
-	public static void fourth(String a, String b, String c, String d)
+	//fourth paragraph- name, fixedLeft, repeatEnd, numEveryOther, vowel
+	public static void fourth(String b, String d, String g, String j, String k)
 	{
-		
+		System.out.println("In a leap, "+g+" landed on " +b+ ", procuring a scream from " +d+ ".");
+		System.out.println("But to the surprise of " + d + ", " + b + " started laughing.");
+		System.out.print("\"It's just a prank!\" they guffawed, and both" + g + " and ");
+		System.out.println(b + " stood up.");
+		System.out.print(g + " reached down to their neck, pulling off a prop head to reveal ");
+		System.out.println(j + ", one of their close friends dressed in a costume");
+		System.out.println("\"We wanted to scare you for Halloween!\" the two chuckled.");
+		System.out.println("\"You should have seen your face! You looked like " + k + "\"!");
 	}
 	
 	//draws the tree based off of the symbol, segment, and height that the user chooses
