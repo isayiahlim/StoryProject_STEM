@@ -281,7 +281,8 @@ public class Story {
 		int orI = Math.max(aOrE, i);
 		int orO = Math.max(orI, o);
 		int orU = Math.max(orO, u);
+		int orZero = Math.max(orU, 0);
 		//makes a new sentence starting at that index
-		return sentence.substring(orU);
+		return sentence.substring(orZero);
 	}
 }
