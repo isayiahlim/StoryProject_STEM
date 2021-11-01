@@ -144,7 +144,7 @@ public class Story {
 		System.out.println("What is your first name: ");
 		String name = input.next();
 		String b= name.substring(1);
-		String game = name + ", bo-B" + b + ", banana-fana fo-F" + b + ", fee-fi-mo-m" + b;
+		String game = name + ", bo-B" + b + ", banana-fana fo-F" + b + ", fee-fi-mo-M" + b;
 		return game;
 	}
 	
@@ -230,7 +230,7 @@ public class Story {
 		int length = sentence.length();
 		
 		//for every letter in the string, it places it in a new one, starting from the end
-		for (int i = length-1; i > 0; i--)
+		for (int i = length; i > 0; i--)
 			newString += sentence.substring(i,i+1);
 		return newString;
 	}
@@ -283,7 +283,6 @@ public class Story {
 		int orO = Math.max(orI, o);
 		int orU = Math.max(orO, u);
 		//makes a new sentence starting at that index
-		String newSentence = sentence.substring(orU);
-		return newSentence;
+		return sentence.substring(orU);;
 	}
 }
