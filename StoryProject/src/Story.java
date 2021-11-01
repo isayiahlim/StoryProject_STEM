@@ -230,7 +230,7 @@ public class Story {
 		int length = sentence.length();
 		
 		//for every letter in the string, it places it in a new one, starting from the end
-		for (int i = length; i > 0; i--)
+		for (int i = length-1; i >= 0; i--)
 			newString += sentence.substring(i,i+1);
 		return newString;
 	}
