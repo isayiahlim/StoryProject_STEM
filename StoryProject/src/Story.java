@@ -263,13 +263,12 @@ public class Story {
 	}
 	
 	/*
-	 * finds the vowels n a string, returns the string starting from the last time a vowel 
+	 * finds the vowels in a string, returns the string starting from the last time a vowel 
 	 * occurs for the first time.
 	*/
 	public static String fromVowel(Scanner input, String question)
 	{
 		System.out.println(question);
-		input.nextLine();
 		String sentence = input.nextLine();
 		//gets the index of each vowel
 		int a = sentence.indexOf("a");
