@@ -41,7 +41,7 @@ public class Story {
 		drawTree('+', 5, 6);
 		//third(b,d,g,i)
 		third(name, fixedLeft, repeatEnd, fixedRight);
-		drawTree('-', 9, 8);
+		drawTree('-', 3, 8);
 		//fourth(b,d,g,j,k)
 		fourth(name, fixedLeft, repeatEnd, numEveryOther, vowel);
 		drawTree('=', 4, 3);
@@ -63,9 +63,9 @@ public class Story {
 	public static void second(String b, String d, String g, String h)
 	{
 		System.out.println("A while later, " + b + " and " + d + " started to set up their tent.");
-		System.out.print("Everything was going well, before " + d + " saw a big looming " + h);
+		System.out.print("Everything was going well, before " + d + " saw a big looming " + g);
 		System.out.println(" in the distance.");
-		System.out.println("\"" + b.toUpperCase() + "!!!\" they yelled, turning to run.");
+		System.out.println("\"" + h.toUpperCase() + "!!!\" they yelled, turning to run.");
 		System.out.println(b + " turned around and gasped." + "\"" + h + ",\" they blurted out.");
 	}
 	
@@ -239,7 +239,7 @@ public class Story {
 	public static String wordMix(Scanner input)
 	{
 		//stores the three words
-		System.out.println("Input three words, separated by spaces. Then hit enter.");
+		System.out.println("Input three words (each longer than 3 letters), separated by spaces.");
 		String first = input.next();
 		String second = input.next();
 		String third = input.next();
