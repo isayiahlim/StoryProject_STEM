@@ -276,12 +276,22 @@ public class Story {
 		int i = sentence.indexOf("i");
 		int o = sentence.indexOf("o");
 		int u = sentence.indexOf("u");
+		int A = sentence.indexOf("A");
+		int E = sentence.indexOf("E");
+		int I = sentence.indexOf("I");
+		int O = sentence.indexOf("O");
+		int U = sentence.indexOf("U");
 		//gets the highest first occurrence 
 		int aOrE = Math.max(a,e);
 		int orI = Math.max(aOrE, i);
 		int orO = Math.max(orI, o);
 		int orU = Math.max(orO, u);
-		int orZero = Math.max(orU, 0);
+		int orCaps = Math.max(orU, A);
+		int capsE = Math.max(orCaps, E);
+		int capsI = Math.max(capsE, I);
+		int capsO = Math.max(capsI, O);
+		int capsU = Math.max(capsO, U);
+		int orZero = Math.max(capsU, 0);
 		//makes a new sentence starting at that index
 		return sentence.substring(orZero);
 	}
