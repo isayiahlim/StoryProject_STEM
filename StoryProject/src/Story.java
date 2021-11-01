@@ -162,8 +162,8 @@ public class Story {
 		System.out.println(question);
 		input.nextLine();
 		String sentence = input.nextLine();
-		int length = sentence.length();
-		String newSentence = sentence.substring(length-2) + sentence.substring(0,length-2);
+		int howLong = sentence.length();
+		String newSentence = sentence.substring(howLong-2) + sentence.substring(0,howLong-2);
 		return newSentence; 
 	}
 	
