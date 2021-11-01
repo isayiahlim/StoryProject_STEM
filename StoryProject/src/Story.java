@@ -160,7 +160,6 @@ public class Story {
 	public static String rotateRight(Scanner input, String question)
 	{
 		System.out.println(question);
-		input.nextLine();
 		String sentence = input.nextLine();
 		int howLong = sentence.length();
 		String newSentence = sentence.substring(howLong-2) + sentence.substring(0,howLong-2);
